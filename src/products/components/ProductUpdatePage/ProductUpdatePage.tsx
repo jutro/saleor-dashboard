@@ -323,6 +323,13 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
         return (
           <DetailPageLayout>
             <TopNav href={productListUrl()} title={header}>
+              <a
+                target="_blank"
+                href={`https://jutromedical.com/sklep/produkty/${data.slug}`}
+                style={{ textDecoration: "underline", margin: "auto 24px" }}
+              >
+                przejdź do strony produktu w sklepie
+              </a>
               <TopNav.Menu
                 items={[
                   ...extensionMenuItems,
@@ -439,7 +446,6 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
                 onFetchMore={fetchMoreTaxClasses}
               />
             </DetailPageLayout.RightSidebar>
-
             <Savebar
               onCancel={() => navigate(productListUrl())}
               onDelete={onDelete}
@@ -468,7 +474,6 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
                 }
               />
             )}
-
             <ProductExternalMediaDialog
               product={product}
               onClose={() => setMediaUrlModalStatus(false)}
