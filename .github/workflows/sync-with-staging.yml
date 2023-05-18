@@ -1,0 +1,19 @@
+name: sync with staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-branch:
+    name: Update staging branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - uses: connor-baer/action-sync-branch@main
+        with:
+          branch: staging
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: false
