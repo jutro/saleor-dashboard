@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { FetchResult, MutationFunction, MutationResult } from "@apollo/client";
 import {
   AddressInput,
@@ -7,12 +8,13 @@ import {
   PaymentChargeStatusEnum,
 } from "@dashboard/graphql";
 import { Node, SlugNode } from "@dashboard/types";
-import { ConfirmButtonTransitionState, ThemeType } from "@saleor/macaw-ui";
+import { ThemeType } from "@saleor/macaw-ui";
 import { DefaultTheme, ThemeTokensValues } from "@saleor/macaw-ui/next";
 import uniqBy from "lodash/uniqBy";
 import moment from "moment-timezone";
 import { IntlShape } from "react-intl";
 
+import { ConfirmButtonTransitionState } from "./components/ConfirmButton";
 import { MultiAutocompleteChoiceType } from "./components/MultiAutocompleteSelectField";
 import { AddressType, AddressTypeInput } from "./customers/types";
 import {

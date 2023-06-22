@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { FileFragment } from "@dashboard/graphql";
 import { commonMessages } from "@dashboard/intl";
 import { Box, Button, Text, TrashBinIcon } from "@saleor/macaw-ui/next";
@@ -57,7 +58,7 @@ const FileUploadField: React.FC<FileUploadFieldProps> = props => {
     <>
       <Box display="flex" justifyContent="flex-end">
         {file.label ? (
-          <Box display="flex" gap={5} alignItems="center">
+          <Box display="flex" gap={2} alignItems="center">
             <Text variant="caption">
               {loading ? (
                 <Skeleton />

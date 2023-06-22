@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { render } from "@testing-library/react";
 import React from "react";
 
@@ -38,7 +39,6 @@ beforeEach(() => {
 describe("Apps AppDetailsPage", () => {
   it("displays app details when app data passed", () => {
     // Arrange
-    const navigateToApp = jest.fn();
     const onAppActivateOpen = jest.fn();
     const onAppDeactivateOpen = jest.fn();
     const onAppDeleteOpen = jest.fn();
@@ -48,7 +48,6 @@ describe("Apps AppDetailsPage", () => {
       <AppDetailsPage
         data={appDetails}
         loading={false}
-        navigateToApp={navigateToApp}
         onAppActivateOpen={onAppActivateOpen}
         onAppDeactivateOpen={onAppDeactivateOpen}
         onAppDeleteOpen={onAppDeleteOpen}
@@ -58,7 +57,6 @@ describe("Apps AppDetailsPage", () => {
     // Assert
     expect(mockHeader).toHaveBeenCalledWith({
       data: appDetails,
-      navigateToApp,
       onAppActivateOpen,
       onAppDeactivateOpen,
       onAppDeleteOpen,

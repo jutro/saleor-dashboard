@@ -84,6 +84,7 @@ export const fragmentOrderLine = gql`
     }
     variant {
       id
+      name
       quantityAvailable
       preorder {
         endDate
@@ -156,6 +157,7 @@ export const fragmentRefundOrderLine = gql`
 
 export const fulfillmentFragment = gql`
   fragment Fulfillment on Fulfillment {
+    ...Metadata
     id
     lines {
       id

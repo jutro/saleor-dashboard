@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import CardTitle from "@dashboard/components/CardTitle";
 import Money from "@dashboard/components/Money";
 import ResponsiveTable from "@dashboard/components/ResponsiveTable";
@@ -49,8 +50,8 @@ const useStyles = makeStyles(
       cursor: "pointer",
       /* Table to be replaced with Box */
       "& .MuiTableCell-root": {
-        paddingLeft: `${vars.space[8]} !important`,
-        paddingRight: `${vars.space[8]} !important`,
+        paddingLeft: `${vars.spacing[5]} !important`,
+        paddingRight: `${vars.spacing[5]} !important`,
       },
     },
     cardContent: {

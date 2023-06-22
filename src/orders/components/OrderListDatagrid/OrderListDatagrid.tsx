@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import ColumnPicker from "@dashboard/components/ColumnPicker";
 import Datagrid from "@dashboard/components/Datagrid/Datagrid";
 import { useColumnsDefault } from "@dashboard/components/Datagrid/hooks/useColumnsDefault";
@@ -133,7 +134,7 @@ export const OrderListDatagrid: React.FC<OrderListDatagridProps> = ({
           rowAnchor={handleRowAnchor}
         />
 
-        <Box paddingX={9}>
+        <Box paddingX={6}>
           <TablePaginationWithContext
             component="div"
             settings={settings}

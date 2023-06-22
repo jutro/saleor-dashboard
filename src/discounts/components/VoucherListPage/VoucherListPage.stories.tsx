@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { voucherList } from "@dashboard/discounts/fixtures";
 import { VoucherListUrlSortField } from "@dashboard/discounts/urls";
 import {
@@ -9,7 +10,7 @@ import {
   tabPageProps,
 } from "@dashboard/fixtures";
 import { DiscountStatusEnum, VoucherDiscountType } from "@dashboard/graphql";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { PaginatorContextDecorator } from "../../../../.storybook/decorators";
 import VoucherListPage, { VoucherListPageProps } from "./VoucherListPage";
@@ -63,24 +64,43 @@ const props: VoucherListPageProps = {
   vouchers: voucherList,
 };
 
-export default {
+const meta: Meta<typeof VoucherListPage> = {
   title: "Discounts / Voucher list",
   decorators: [PaginatorContextDecorator],
+  component: VoucherListPage,
+};
+export default meta;
+type Story = StoryObj<typeof VoucherListPage>;
+
+export const Default: Story = {
+  args: {
+    ...props,
+  },
+  parameters: {
+    chromatic: { diffThreshold: 0.85 },
+  },
 };
 
-export const Default = () => <VoucherListPage {...props} />;
+export const Loading: Story = {
+  args: {
+    ...props,
+    vouchers: undefined,
+  },
+  parameters: {
+    chromatic: { diffThreshold: 0.85 },
+  },
+};
 
-export const Loading = () => (
-  <VoucherListPage {...props} vouchers={undefined} />
-);
-
-export const NoChannels = () => (
-  <VoucherListPage
-    {...props}
-    selectedChannelId=""
-    vouchers={voucherList.map(voucher => ({
+export const NoChannels: Story = {
+  args: {
+    ...props,
+    selectedChannelId: "",
+    vouchers: voucherList.map(voucher => ({
       ...voucher,
       channelListings: [],
-    }))}
-  />
-);
+    })),
+  },
+  parameters: {
+    chromatic: { diffThreshold: 0.85 },
+  },
+};

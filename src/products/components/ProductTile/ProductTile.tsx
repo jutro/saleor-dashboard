@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { StatusDot } from "@dashboard/components/StatusDot/StatusDot";
 import { ProductListQuery } from "@dashboard/graphql";
 import { RelayToFlat } from "@dashboard/types";
@@ -21,7 +22,7 @@ const commonThumbnailProps = {
   borderColor: "neutralHighlight",
   borderStyle: "solid",
   borderWidth: 1,
-  marginBottom: 4,
+  marginBottom: 1.5,
   borderRadius: 3,
   aspectRatio: "1 / 1",
 } as const;
@@ -65,7 +66,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
       </Box>
     )}
     <Box display="flex" alignItems="center">
-      <Box paddingRight={3}>
+      <Box paddingRight={1}>
         <StatusDot status={getTileStatus(product.channelListings)} />
       </Box>
       <Text
@@ -74,12 +75,12 @@ export const ProductTile: React.FC<ProductTileProps> = ({
         variant="caption"
         size="small"
         alignItems="center"
-        className={sprinkles({ paddingY: 2 })}
+        className={sprinkles({ paddingY: 0.5 })}
       >
         {product.productType.name}
       </Text>
     </Box>
-    <Box display="flex" justifyContent="space-between" marginTop={2}>
+    <Box display="flex" justifyContent="space-between" marginTop={0.5}>
       <Text ellipsis color="textNeutralDefault" variant="bodyEmp" size="small">
         {product.name}
       </Text>
@@ -87,10 +88,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
     <Box
       position={"absolute"}
       margin="auto"
-      __right={`calc(${vars.space[8]} / -2)`}
-      __top={`calc(${vars.space[8]} / -2)`}
-      __width={`calc(100% + ${vars.space[8]})`}
-      __height={`calc(100% + ${vars.space[8]})`}
+      __right={`calc(${vars.spacing[5]} / -2)`}
+      __top={`calc(${vars.spacing[5]} / -2)`}
+      __width={`calc(100% + ${vars.spacing[5]})`}
+      __height={`calc(100% + ${vars.spacing[5]})`}
       __opacity={0.1}
       borderRadius={5}
       backgroundColor={{

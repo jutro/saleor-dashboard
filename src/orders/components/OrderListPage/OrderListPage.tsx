@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import {
   extensionMountPoints,
   mapToMenuItems,
@@ -128,7 +129,7 @@ const OrderListPage: React.FC<OrderListPageProps> = ({
           alignItems="center"
         >
           <Box display="flex">
-            <Box marginX={6} display="flex" alignItems="center">
+            <Box marginX={3} display="flex" alignItems="center">
               <ChevronRightIcon />
             </Box>
 
@@ -149,7 +150,7 @@ const OrderListPage: React.FC<OrderListPageProps> = ({
             />
           </Box>
 
-          <Box display="flex" alignItems="center" gap={5}>
+          <Box display="flex" alignItems="center" gap={2}>
             {!!onSettingsOpen && (
               <CardMenu
                 className={classes.settings}

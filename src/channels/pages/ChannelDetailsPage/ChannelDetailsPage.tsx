@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import ChannelAllocationStrategy from "@dashboard/channels/components/ChannelAllocationStrategy";
 import ShippingZones from "@dashboard/channels/components/ShippingZones";
 import Warehouses from "@dashboard/channels/components/Warehouses";
@@ -5,6 +6,7 @@ import { channelsListUrl } from "@dashboard/channels/urls";
 import { validateChannelFormData } from "@dashboard/channels/validation";
 import { TopNav } from "@dashboard/components/AppLayout/TopNav";
 import CardSpacer from "@dashboard/components/CardSpacer";
+import { ConfirmButtonTransitionState } from "@dashboard/components/ConfirmButton";
 import Form from "@dashboard/components/Form";
 import { DetailPageLayout } from "@dashboard/components/Layouts";
 import RequirePermissions from "@dashboard/components/RequirePermissions";
@@ -30,7 +32,6 @@ import useStateFromProps from "@dashboard/hooks/useStateFromProps";
 import { FetchMoreProps, RelayToFlat } from "@dashboard/types";
 import createSingleAutocompleteSelectHandler from "@dashboard/utils/handlers/singleAutocompleteSelectChangeHandler";
 import { mapCountriesToChoices } from "@dashboard/utils/maps";
-import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
 

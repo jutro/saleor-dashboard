@@ -1,4 +1,5 @@
-import ConfirmButton from "@dashboard/components/ConfirmButton";
+// @ts-strict-ignore
+import { ConfirmButton } from "@dashboard/components/ConfirmButton";
 import { Task } from "@dashboard/containers/BackgroundTasks/types";
 import {
   useExportGiftCardsMutation,

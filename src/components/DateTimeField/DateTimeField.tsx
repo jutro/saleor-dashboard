@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { getErrorMessage } from "@dashboard/components/Attributes/utils";
 import {
   PageErrorWithAttributesFragment,
@@ -29,7 +30,7 @@ export const DateTimeField: React.FC<DateTimeFieldProps> = ({
   const parsedValue = value ? splitDateTime(value) : { date: "", time: "" };
 
   return (
-    <Box display="flex" gap={2}>
+    <Box display="flex" gap={0.5}>
       <TextField
         fullWidth
         disabled={disabled}

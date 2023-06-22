@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import {
   filterPageProps,
   listActionsProps,
@@ -6,6 +7,7 @@ import {
   sortPageProps,
   tabPageProps,
 } from "@dashboard/fixtures";
+import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
 import { PaginatorContextDecorator } from "../../../../.storybook/decorators";
@@ -53,15 +55,40 @@ const CustomerListPage = props => (
   </MockedUserProvider>
 );
 
-export default {
+const meta: Meta<typeof CustomerListPage> = {
   title: "Customers / Customer list",
   decorators: [PaginatorContextDecorator],
+  component: CustomerListPage,
+};
+export default meta;
+type Story = StoryObj<typeof CustomerListPage>;
+
+export const Default: Story = {
+  args: {
+    ...props,
+  },
+  parameters: {
+    chromatic: { diffThreshold: 0.85 },
+  },
 };
 
-export const Default = () => <CustomerListPage {...props} />;
+export const Loading: Story = {
+  args: {
+    ...props,
+    customers: undefined,
+    disabled: true,
+  },
+  parameters: {
+    chromatic: { diffThreshold: 0.85 },
+  },
+};
 
-export const Loading = () => (
-  <CustomerListPage {...props} disabled={true} customers={undefined} />
-);
-
-export const NoData = () => <CustomerListPage {...props} customers={[]} />;
+export const NoData: Story = {
+  args: {
+    ...props,
+    customers: [],
+  },
+  parameters: {
+    chromatic: { diffThreshold: 0.85 },
+  },
+};

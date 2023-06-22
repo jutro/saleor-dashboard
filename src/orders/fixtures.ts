@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import {
   AppAvatarFragment,
   ChannelUsabilityDataQuery,
@@ -1207,6 +1208,8 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
       __typename: "Fulfillment",
       fulfillmentOrder: 2,
       id: "RnVsZmlsbG1lbnQ6MjQ=",
+      metadata: [],
+      privateMetadata: [],
       lines: [
         {
           __typename: "FulfillmentLine",
@@ -1287,6 +1290,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
             variant: {
               __typename: "ProductVariant",
               id: "dsfsfuhb",
+              name: "XS",
               quantityAvailable: 10,
               preorder: null,
               product: {
@@ -1331,6 +1335,8 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
       __typename: "Fulfillment",
       fulfillmentOrder: 1,
       id: "RnVsZmlsbG1lbnQ6OQ==",
+      metadata: [],
+      privateMetadata: [],
       lines: [
         {
           __typename: "FulfillmentLine",
@@ -1411,6 +1417,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
             variant: {
               __typename: "ProductVariant",
               id: "dsfsfuhb",
+              name: "XS",
               quantityAvailable: 10,
               preorder: null,
               product: {
@@ -1543,6 +1550,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
       variant: {
         __typename: "ProductVariant",
         id: "dsfsfuhb",
+        name: "Soft",
         quantityAvailable: 10,
         preorder: null,
         product: {
@@ -1652,6 +1660,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
       variant: {
         __typename: "ProductVariant",
         id: "dsfsfuhb",
+        name: "XXL",
         quantityAvailable: 10,
         preorder: null,
         product: {
@@ -1926,6 +1935,7 @@ export const draftOrder = (placeholder: string): OrderDetailsFragment => ({
       variant: {
         __typename: "ProductVariant",
         id: "dsfsfuhb",
+        name: "Hard",
         quantityAvailable: 10,
         preorder: null,
         product: {
@@ -2035,6 +2045,7 @@ export const draftOrder = (placeholder: string): OrderDetailsFragment => ({
       variant: {
         __typename: "ProductVariant",
         id: "dsfsfuhb",
+        name: "15-1337",
         quantityAvailable: 10,
         preorder: null,
         product: {
@@ -2240,8 +2251,8 @@ export const variants = [
 ];
 export const prefixes = ["01", "02", "41", "49"];
 export const shippingMethods = [
-  { country: "whole world", id: "s1", name: "DHL", price: {} },
-  { country: "Afghanistan", id: "s2", name: "UPS" },
+  { country: "whole world", id: 1, name: "DHL", price: {} },
+  { country: "Afghanistan", id: 2, name: "UPS" },
 ];
 export const orderLineSearch = (
   placeholderImage: string,

@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { inputTypeMessages } from "@dashboard/attributes/components/AttributeDetails/messages";
 import { BasicAttributeRow } from "@dashboard/components/Attributes/BasicAttributeRow";
 import ExtendedAttributeRow from "@dashboard/components/Attributes/ExtendedAttributeRow";
@@ -199,11 +200,11 @@ const AttributeRow: React.FC<AttributeRowProps> = ({
       );
     case AttributeInputTypeEnum.BOOLEAN:
       return (
-        <Box as="li" display="flex" gap={5} alignItems="center" padding={3}>
+        <Box as="li" display="flex" gap={2} alignItems="center" padding={1}>
           <Box data-test-id="attribute-value">
             <Box
               display="flex"
-              gap={2}
+              gap={0.5}
               flexDirection="column"
               alignItems="flex-end"
             >
@@ -224,7 +225,7 @@ const AttributeRow: React.FC<AttributeRowProps> = ({
             as="label"
             htmlFor={`attribute:${attribute.label}`}
             display="flex"
-            gap={3}
+            gap={1}
             cursor="pointer"
           >
             <Text>{attribute.label}</Text>

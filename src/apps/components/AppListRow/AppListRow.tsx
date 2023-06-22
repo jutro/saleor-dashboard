@@ -1,3 +1,4 @@
+// @ts-strict-ignore
 import { useAppListContext } from "@dashboard/apps/context";
 import { GetV2SaleorAppsResponse } from "@dashboard/apps/marketplace.types";
 import {
@@ -62,8 +63,8 @@ const AppListRow: React.FC<AppListRowProps> = ({
       gridTemplateColumns={2}
       __gridTemplateRows="repeat(4, auto)"
       gridAutoFlow={isSingleApp ? "column" : "row"}
-      columnGap={8}
-      padding={8}
+      columnGap={5}
+      padding={5}
     >
       {appPair.map(app => (
         <AppListCardDescription key={app.name.en + "description"} app={app} />
